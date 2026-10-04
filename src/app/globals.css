@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #080a09;
+    --bg-secondary: #101a15;
+    --dark-green: #1c2a22;
+    --muted-gold: #b89a5a;
+    --soft-gold: #d4b978;
+    --text-primary: #e8e8e3;
+    --text-secondary: #858982;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    selection-background-color: var(--dark-green);
+    selection-color: var(--soft-gold);
+  }
+
+  body {
+    background-color: #080a09;
+    color: #e8e8e3;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #1c2a22;
+    color: #d4b978;
+  }
+}
+
+/* Custom Utilities & Filmic Grain */
+.bg-studio-primary {
+  background-color: #080a09;
+}
+
+.bg-studio-secondary {
+  background-color: #101a15;
+}
+
+.bg-studio-dark-green {
+  background-color: #1c2a22;
+}
+
+.border-studio-green {
+  border-color: #1c2a22;
+}
+
+.border-studio-gold {
+  border-color: #b89a5a;
+}
+
+.text-studio-primary {
+  color: #e8e8e3;
+}
+
+.text-studio-secondary {
+  color: #858982;
+}
+
+.text-studio-gold {
+  color: #b89a5a;
+}
+
+.text-studio-soft-gold {
+  color: #d4b978;
+}
+
+/* Metallic text effect */
+.text-metallic-gold {
+  background: linear-gradient(135deg, #e8e8e3 0%, #d4b978 40%, #b89a5a 70%, #e8e8e3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-metallic-silver {
+  background: linear-gradient(135deg, #ffffff 0%, #e8e8e3 50%, #858982 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Atmospheric Glow */
+.atmospheric-glow {
+  background: radial-gradient(circle at 50% 30%, rgba(28, 42, 34, 0.45) 0%, rgba(16, 26, 21, 0.15) 50%, transparent 80%);
+}
+
+.atmospheric-glow-gold {
+  background: radial-gradient(circle at 50% 50%, rgba(184, 154, 90, 0.12) 0%, rgba(28, 42, 34, 0.05) 50%, transparent 75%);
+}
+
+/* Sci-fi grid texture */
+.bg-grid-pattern {
+  background-size: 60px 60px;
+  background-image: 
+    linear-gradient(to right, rgba(28, 42, 34, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(28, 42, 34, 0.25) 1px, transparent 1px);
+}
+
+.bg-dots-pattern {
+  background-image: radial-gradient(rgba(184, 154, 90, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080a09;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1c2a22;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b89a5a;
+}
