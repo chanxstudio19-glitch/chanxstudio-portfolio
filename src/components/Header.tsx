@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, ArrowUpRight, Sparkles } from "lucide-react";
+import { Menu, X, ArrowUpRight } from "lucide-react";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,120 +21,105 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: "01 / STUDIO", href: "#studio" },
-    { label: "02 / SERVICES", href: "#services" },
-    { label: "03 / WORK", href: "#work" },
-    { label: "04 / PROCESS", href: "#process" },
-    { label: "05 / STACK", href: "#stack" },
-    { label: "06 / FOUNDER", href: "#founder" },
-    { label: "07 / PRINCIPLES", href: "#principles" },
+    { label: "STUDIO", href: "#studio" },
+    { label: "SERVICES", href: "#services" },
+    { label: "WORK", href: "#work" },
+    { label: "PROCESS", href: "#process" },
+    { label: "STACK", href: "#stack" },
+    { label: "FOUNDER", href: "#founder" },
   ];
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${
-        scrolled
-          ? "bg-[#080A09]/85 backdrop-blur-md border-b border-[#1C2A22]/60 py-3.5 shadow-2xl shadow-black/60"
-          : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled ? "py-3 bg-[#080A09]/90 backdrop-blur-xl border-b border-[#1C2A22]" : "py-6 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between">
         {/* Brand Logo */}
         <Link href="#" className="group flex items-center gap-3">
-          <div className="relative w-8 h-8 flex items-center justify-center border border-[#1C2A22] bg-[#101A15]/90 group-hover:border-[#B89A5A] transition-colors duration-300">
-            <span className="font-mono text-xs font-bold tracking-tighter text-[#E8E8E3] group-hover:text-[#D4B978]">
+          <div className="relative w-9 h-9 flex items-center justify-center border border-[#1C2A22] bg-[#101A15] group-hover:border-[#B89A5A] transition-colors duration-300">
+            <span className="font-mono text-xs font-bold tracking-tight text-[#E8E8E3] group-hover:text-[#D4B978]">
               CX
             </span>
-            <div className="absolute -top-[1px] -left-[1px] w-1.5 h-1.5 bg-[#B89A5A] opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="absolute -bottom-[1px] -right-[1px] w-1.5 h-1.5 bg-[#B89A5A] opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -top-[1px] -left-[1px] w-1.5 h-1.5 bg-[#D4B978] opacity-0 group-hover:opacity-100 transition-opacity" />
+            <div className="absolute -bottom-[1px] -right-[1px] w-1.5 h-1.5 bg-[#D4B978] opacity-0 group-hover:opacity-100 transition-opacity" />
           </div>
           <div className="flex flex-col">
-            <span className="font-mono text-sm tracking-[0.25em] font-bold text-[#E8E8E3] group-hover:text-[#D4B978] transition-colors">
+            <span className="font-heading text-sm tracking-[0.25em] font-bold text-[#E8E8E3] group-hover:text-[#D4B978] transition-colors">
               CHAN X STUDIO
             </span>
-            <span className="font-mono text-[9px] tracking-wider text-[#858982]">
-              INDEPENDENT CREATIVE TECH
+            <span className="font-mono text-[9px] tracking-widest text-[#858982]">
+              CREATIVE TECHNOLOGY
             </span>
           </div>
         </Link>
 
-        {/* Desktop Navigation */}
-        <nav className="hidden xl:flex items-center gap-6">
+        {/* Floating Glass Pill Navigation Bar */}
+        <nav className="hidden lg:flex items-center gap-1 bg-[#101A15]/80 border border-[#1C2A22] px-4 py-1.5 rounded-full backdrop-blur-md">
           {navItems.map((item) => (
             <Link
               key={item.label}
               href={item.href}
-              className="font-mono text-[11px] text-[#858982] hover:text-[#E8E8E3] transition-colors tracking-widest relative group py-1"
+              className="font-mono text-[11px] font-medium text-[#858982] hover:text-[#D4B978] px-4 py-1.5 rounded-full hover:bg-[#1C2A22]/60 transition-all tracking-wider"
             >
               {item.label}
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#B89A5A] group-hover:w-full transition-all duration-300" />
             </Link>
           ))}
         </nav>
 
-        {/* Action & Status */}
+        {/* Action & Live Indicator */}
         <div className="hidden lg:flex items-center gap-5">
-          <div className="flex items-center gap-2 border border-[#1C2A22] bg-[#101A15]/70 px-3 py-1.5 rounded-full">
+          <div className="flex items-center gap-2 border border-[#1C2A22] bg-[#101A15]/60 px-3.5 py-1.5 rounded-full">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B89A5A] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4B978]"></span>
             </span>
-            <span className="font-mono text-[10px] tracking-wider text-[#E8E8E3]/80 uppercase flex items-center gap-1.5">
-              <span>AVAILABLE FOR PROJECTS</span>
+            <span className="font-mono text-[10px] tracking-wider text-[#E8E8E3] uppercase">
+              STUDIO ACTIVE
             </span>
           </div>
 
           <Link
             href="#contact"
-            className="group relative inline-flex items-center gap-2 bg-[#101A15] border border-[#1C2A22] hover:border-[#B89A5A] px-4 py-2 font-mono text-xs tracking-widest text-[#E8E8E3] hover:text-[#D4B978] transition-all duration-300 shadow-md hover:shadow-[#B89A5A]/10"
+            className="group relative inline-flex items-center gap-2 bg-[#1C2A22] hover:bg-[#B89A5A] hover:text-[#080A09] border border-[#B89A5A] px-5 py-2 font-mono text-xs tracking-widest text-[#E8E8E3] transition-all duration-300"
           >
             <span>START A PROJECT</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-[#B89A5A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            <ArrowUpRight className="w-3.5 h-3.5 text-[#D4B978] group-hover:text-[#080A09] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
           </Link>
         </div>
 
-        {/* Mobile Hamburger Toggle */}
+        {/* Mobile Hamburger */}
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden p-2.5 text-[#E8E8E3] border border-[#1C2A22] bg-[#101A15] hover:border-[#B89A5A] transition-colors"
+          className="lg:hidden p-2 text-[#E8E8E3] border border-[#1C2A22] bg-[#101A15] hover:border-[#B89A5A] transition-colors"
           aria-label="Toggle Navigation Menu"
         >
           {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
         </button>
       </div>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="lg:hidden fixed inset-x-0 top-[73px] bg-[#080A09]/98 backdrop-blur-2xl border-b border-[#1C2A22] p-6 flex flex-col gap-6 shadow-2xl animate-in slide-in-from-top-4 duration-300 z-50">
+        <div className="lg:hidden fixed inset-x-0 top-[73px] bg-[#080A09]/95 backdrop-blur-2xl border-b border-[#1C2A22] p-6 flex flex-col gap-6 shadow-2xl">
           <div className="flex flex-col gap-3">
             {navItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-mono text-xs tracking-widest text-[#858982] hover:text-[#D4B978] transition-colors py-2.5 border-b border-[#1C2A22]/40 flex items-center justify-between"
+                className="font-mono text-xs tracking-widest text-[#858982] hover:text-[#D4B978] transition-colors py-2.5 border-b border-[#1C2A22]/40"
               >
-                <span>{item.label}</span>
-                <ArrowUpRight className="w-3.5 h-3.5 opacity-40" />
+                {item.label}
               </Link>
             ))}
           </div>
 
           <div className="flex flex-col gap-4 pt-2">
-            <div className="flex items-center gap-2 border border-[#1C2A22] bg-[#101A15] px-3 py-2">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#B89A5A] opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#D4B978]"></span>
-              </span>
-              <span className="font-mono text-xs tracking-wider text-[#E8E8E3]/80">
-                STATUS: ACCEPTING INQUIRIES
-              </span>
-            </div>
-
             <Link
               href="#contact"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-center gap-2 bg-[#101A15] border border-[#B89A5A] py-3 font-mono text-xs tracking-widest text-[#D4B978] hover:bg-[#1C2A22] transition-colors"
+              className="flex items-center justify-center gap-2 bg-[#1C2A22] border border-[#B89A5A] py-3.5 font-mono text-xs tracking-widest text-[#D4B978] hover:bg-[#B89A5A] hover:text-[#080A09] transition-colors"
             >
               <span>START A PROJECT</span>
               <ArrowUpRight className="w-4 h-4" />

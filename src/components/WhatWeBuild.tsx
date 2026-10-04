@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Code, Bot, Workflow, Layout, ArrowUpRight } from "lucide-react";
+import { Code, Bot, Workflow, Layout, ArrowUpRight, Sparkles } from "lucide-react";
 import ServiceModal, { ServiceDetail } from "./ServiceModal";
 
 export default function WhatWeBuild() {
@@ -112,22 +112,22 @@ export default function WhatWeBuild() {
   };
 
   return (
-    <section id="services" className="py-24 lg:py-36 relative bg-[#080A09] border-t border-[#1C2A22]/50">
+    <section id="services" className="py-24 lg:py-36 relative bg-[#080A09] border-t border-[#1C2A22]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-8">
-          <span className="font-mono text-xs text-[#B89A5A] tracking-widest uppercase">
+          <span className="font-mono text-xs text-[#D4B978] tracking-widest uppercase font-semibold">
             02 / WHAT WE BUILD
           </span>
-          <div className="h-[1px] w-12 bg-[#1C2A22]" />
+          <div className="h-[1px] w-16 bg-[#1C2A22]" />
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#E8E8E3] tracking-tight max-w-2xl">
+          <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#E8E8E3] tracking-tight max-w-2xl">
             Core technical disciplines designed for <span className="text-metallic-gold">real-world impact</span>.
           </h2>
           <p className="font-mono text-xs text-[#858982] max-w-xs leading-relaxed">
-            Click any discipline to examine detailed technical capabilities and deliverables.
+            Click any discipline card to examine deep technical specs and deliverables.
           </p>
         </div>
 
@@ -141,13 +141,12 @@ export default function WhatWeBuild() {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               onClick={() => setSelectedService(service)}
-              className="group relative bg-[#101A15]/70 border border-[#1C2A22] p-8 lg:p-10 flex flex-col justify-between hover:border-[#B89A5A] transition-all duration-300 cursor-pointer overflow-hidden"
+              className="group relative bg-[#101A15]/80 border border-[#1C2A22] p-8 lg:p-10 flex flex-col justify-between hover:border-[#B89A5A] transition-all duration-500 cursor-pointer overflow-hidden shadow-xl"
             >
-              {/* Subtle top glow bar */}
-              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#B89A5A] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Glowing Top Edge Line */}
+              <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4B978] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div>
-                {/* Header row */}
                 <div className="flex items-center justify-between mb-8">
                   <div className="p-3 bg-[#080A09] border border-[#1C2A22] group-hover:border-[#B89A5A] transition-colors">
                     {getServiceIcon(service.id)}
@@ -157,23 +156,21 @@ export default function WhatWeBuild() {
                   </span>
                 </div>
 
-                {/* Card Title */}
-                <h3 className="text-2xl lg:text-3xl font-bold text-[#E8E8E3] group-hover:text-[#D4B978] transition-colors tracking-tight mb-4">
+                <h3 className="font-heading text-2xl lg:text-3xl font-bold text-[#E8E8E3] group-hover:text-[#D4B978] transition-colors tracking-tight mb-4">
                   {service.title}
                 </h3>
 
-                {/* Short Description */}
-                <p className="text-sm text-[#858982] leading-relaxed group-hover:text-[#E8E8E3]/80 transition-colors">
+                <p className="text-sm text-[#858982] leading-relaxed group-hover:text-[#E8E8E3]/90 transition-colors font-light">
                   {service.description}
                 </p>
               </div>
 
-              {/* Card Footer Link */}
-              <div className="mt-10 pt-6 border-t border-[#1C2A22]/60 flex items-center justify-between">
-                <span className="font-mono text-xs text-[#B89A5A] group-hover:underline">
+              <div className="mt-10 pt-6 border-t border-[#1C2A22] flex items-center justify-between">
+                <span className="font-mono text-xs text-[#D4B978] group-hover:underline flex items-center gap-1.5">
+                  <Sparkles className="w-3.5 h-3.5" />
                   EXPLORE SPECIFICATIONS
                 </span>
-                <div className="w-8 h-8 rounded-full border border-[#1C2A22] group-hover:border-[#B89A5A] group-hover:bg-[#1C2A22] flex items-center justify-center transition-all duration-300">
+                <div className="w-9 h-9 rounded-full border border-[#1C2A22] group-hover:border-[#B89A5A] group-hover:bg-[#1C2A22] flex items-center justify-center transition-all duration-300">
                   <ArrowUpRight className="w-4 h-4 text-[#E8E8E3] group-hover:text-[#D4B978] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                 </div>
               </div>
@@ -182,7 +179,6 @@ export default function WhatWeBuild() {
         </div>
       </div>
 
-      {/* Service Detail Drawer */}
       <ServiceModal
         service={selectedService}
         onClose={() => setSelectedService(null)}

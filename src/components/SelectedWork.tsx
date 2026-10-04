@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight, Cpu, LineChart, Database, GraduationCap } from "lucide-react";
+import { ArrowUpRight, Cpu, LineChart, Database, GraduationCap, ShieldCheck } from "lucide-react";
 import ProjectModal, { ProjectData } from "./ProjectModal";
 
 export default function SelectedWork() {
@@ -87,127 +87,127 @@ export default function SelectedWork() {
     switch (type) {
       case "draco":
         return (
-          <div className="relative w-full h-64 sm:h-72 lg:h-80 bg-[#080A09] border border-[#1C2A22] p-6 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A]/60 transition-colors">
-            <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
-            <div className="absolute -top-10 -right-10 w-48 h-48 bg-[#1C2A22]/50 rounded-full blur-2xl" />
+          <div className="relative w-full h-72 sm:h-80 lg:h-96 bg-[#080A09] border border-[#1C2A22] p-8 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A] transition-all duration-500 shadow-2xl">
+            <div className="absolute inset-0 bg-grid-cyber opacity-50 pointer-events-none" />
+            <div className="absolute -top-12 -right-12 w-64 h-64 bg-[#1C2A22]/60 rounded-full blur-3xl" />
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982]">
-              <span className="flex items-center gap-2 text-[#D4B978]">
-                <Cpu className="w-3.5 h-3.5" />
+            <div className="relative z-10 flex items-center justify-between font-mono text-xs text-[#858982]">
+              <span className="flex items-center gap-2 text-[#D4B978] font-bold">
+                <Cpu className="w-4 h-4" />
                 LOCAL AI RUNTIME
               </span>
-              <span>CONFIDENTIAL // AGENT_01</span>
+              <span className="bg-[#101A15] border border-[#1C2A22] px-2.5 py-1">CONFIDENTIAL // AGENT_01</span>
             </div>
 
             <div className="relative z-10 my-auto flex items-center justify-center">
-              <div className="relative w-28 h-28 border border-[#1C2A22] rounded-full flex items-center justify-center bg-[#101A15]/80 group-hover:scale-105 transition-transform duration-500">
-                <div className="absolute inset-2 border border-dashed border-[#B89A5A]/50 rounded-full animate-spin-slow" />
-                <span className="font-mono text-xl font-bold text-[#E8E8E3] group-hover:text-[#D4B978]">
+              <div className="relative w-36 h-36 border border-[#1C2A22] rounded-full flex items-center justify-center bg-[#101A15]/90 group-hover:scale-105 transition-transform duration-500 shadow-2xl">
+                <div className="absolute inset-2 border border-dashed border-[#D4B978]/60 rounded-full animate-spin-slow" />
+                <span className="font-heading text-2xl font-extrabold text-[#E8E8E3] group-hover:text-[#D4B978]">
                   DRACO
                 </span>
               </div>
             </div>
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982] border-t border-[#1C2A22]/50 pt-2">
+            <div className="relative z-10 flex items-center justify-between font-mono text-[11px] text-[#858982] border-t border-[#1C2A22] pt-3">
               <span>MODEL: LOCAL_LLM_V2</span>
-              <span className="text-[#D4B978]">PRIVACY: 100% ISOLATED</span>
+              <span className="text-[#D4B978] font-bold">PRIVACY: 100% ISOLATED</span>
             </div>
           </div>
         );
 
       case "aerolytix":
         return (
-          <div className="relative w-full h-64 sm:h-72 lg:h-80 bg-[#080A09] border border-[#1C2A22] p-6 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A]/60 transition-colors">
-            <div className="absolute inset-0 bg-dots-pattern opacity-30 pointer-events-none" />
-            <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-[#1C2A22]/50 rounded-full blur-2xl" />
+          <div className="relative w-full h-72 sm:h-80 lg:h-96 bg-[#080A09] border border-[#1C2A22] p-8 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A] transition-all duration-500 shadow-2xl">
+            <div className="absolute inset-0 bg-dots-cyber opacity-40 pointer-events-none" />
+            <div className="absolute -bottom-12 -left-12 w-64 h-64 bg-[#1C2A22]/60 rounded-full blur-3xl" />
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982]">
-              <span className="flex items-center gap-2 text-[#D4B978]">
-                <LineChart className="w-3.5 h-3.5" />
+            <div className="relative z-10 flex items-center justify-between font-mono text-xs text-[#858982]">
+              <span className="flex items-center gap-2 text-[#D4B978] font-bold">
+                <LineChart className="w-4 h-4" />
                 AIRFARE INDEX TELEMETRY
               </span>
-              <span>NORMALIZED_DATA</span>
+              <span className="bg-[#101A15] border border-[#1C2A22] px-2.5 py-1">NORMALIZED_DATA</span>
             </div>
 
-            <div className="relative z-10 my-auto w-full px-4 flex items-end justify-between gap-1.5 h-24">
-              {[40, 65, 35, 80, 55, 90, 45, 70, 85, 60, 95, 50].map((h, i) => (
+            <div className="relative z-10 my-auto w-full px-4 flex items-end justify-between gap-2 h-32">
+              {[45, 70, 40, 85, 60, 95, 50, 75, 90, 65, 100, 55].map((h, i) => (
                 <div
                   key={i}
-                  className="w-full bg-[#1C2A22] group-hover:bg-[#B89A5A] transition-colors duration-300 rounded-t-xs"
+                  className="w-full bg-[#1C2A22] group-hover:bg-[#B89A5A] transition-all duration-500 rounded-t-xs"
                   style={{ height: `${h}%` }}
                 />
               ))}
             </div>
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982] border-t border-[#1C2A22]/50 pt-2">
+            <div className="relative z-10 flex items-center justify-between font-mono text-[11px] text-[#858982] border-t border-[#1C2A22] pt-3">
               <span>INGESTION: AUTOMATED SCRAPE</span>
-              <span className="text-[#D4B978]">INDEX: AGGREGATED</span>
+              <span className="text-[#D4B978] font-bold">INDEX: AGGREGATED</span>
             </div>
           </div>
         );
 
       case "sports":
         return (
-          <div className="relative w-full h-64 sm:h-72 lg:h-80 bg-[#080A09] border border-[#1C2A22] p-6 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A]/60 transition-colors">
-            <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none" />
+          <div className="relative w-full h-72 sm:h-80 lg:h-96 bg-[#080A09] border border-[#1C2A22] p-8 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A] transition-all duration-500 shadow-2xl">
+            <div className="absolute inset-0 bg-grid-cyber opacity-50 pointer-events-none" />
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982]">
-              <span className="flex items-center gap-2 text-[#D4B978]">
-                <Database className="w-3.5 h-3.5" />
+            <div className="relative z-10 flex items-center justify-between font-mono text-xs text-[#858982]">
+              <span className="flex items-center gap-2 text-[#D4B978] font-bold">
+                <Database className="w-4 h-4" />
                 RELATIONAL DATABASE SCHEMA
               </span>
-              <span>PHP // MYSQL</span>
+              <span className="bg-[#101A15] border border-[#1C2A22] px-2.5 py-1">PHP // MYSQL</span>
             </div>
 
-            <div className="relative z-10 my-auto grid grid-cols-3 gap-3 w-full max-w-sm mx-auto">
+            <div className="relative z-10 my-auto grid grid-cols-3 gap-3 w-full max-w-md mx-auto">
               {["PLAYERS", "TEAMS", "MATCHES", "SCORES", "LEAGUES", "STATS"].map((label, idx) => (
                 <div
                   key={idx}
-                  className="p-2.5 bg-[#101A15] border border-[#1C2A22] group-hover:border-[#B89A5A]/50 text-center font-mono text-[11px] text-[#E8E8E3]"
+                  className="p-3 bg-[#101A15] border border-[#1C2A22] group-hover:border-[#B89A5A]/60 text-center font-mono text-xs text-[#E8E8E3] font-bold shadow-md"
                 >
                   {label}
                 </div>
               ))}
             </div>
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982] border-t border-[#1C2A22]/50 pt-2">
+            <div className="relative z-10 flex items-center justify-between font-mono text-[11px] text-[#858982] border-t border-[#1C2A22] pt-3">
               <span>QUERY OPTIMIZED</span>
-              <span className="text-[#D4B978]">STRUCTURED DATA</span>
+              <span className="text-[#D4B978] font-bold">STRUCTURED DATA</span>
             </div>
           </div>
         );
 
       default:
         return (
-          <div className="relative w-full h-64 sm:h-72 lg:h-80 bg-[#080A09] border border-[#1C2A22] p-6 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A]/60 transition-colors">
-            <div className="absolute inset-0 bg-dots-pattern opacity-30 pointer-events-none" />
+          <div className="relative w-full h-72 sm:h-80 lg:h-96 bg-[#080A09] border border-[#1C2A22] p-8 flex flex-col justify-between overflow-hidden group-hover:border-[#B89A5A] transition-all duration-500 shadow-2xl">
+            <div className="absolute inset-0 bg-dots-cyber opacity-40 pointer-events-none" />
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982]">
-              <span className="flex items-center gap-2 text-[#D4B978]">
-                <GraduationCap className="w-3.5 h-3.5" />
+            <div className="relative z-10 flex items-center justify-between font-mono text-xs text-[#858982]">
+              <span className="flex items-center gap-2 text-[#D4B978] font-bold">
+                <GraduationCap className="w-4 h-4" />
                 AI LEARNING PLATFORM
               </span>
-              <span>ADAPTIVE_ENGINE</span>
+              <span className="bg-[#101A15] border border-[#1C2A22] px-2.5 py-1">ADAPTIVE_ENGINE</span>
             </div>
 
-            <div className="relative z-10 my-auto flex flex-col items-center gap-3">
-              <div className="px-4 py-2 bg-[#101A15] border border-[#B89A5A] font-mono text-xs text-[#D4B978]">
+            <div className="relative z-10 my-auto flex flex-col items-center gap-4">
+              <div className="px-5 py-2.5 bg-[#101A15] border border-[#B89A5A] font-mono text-xs text-[#D4B978] font-bold shadow-lg">
                 PERSONALIZED SKILL ROADMAP
               </div>
-              <div className="w-[1px] h-6 bg-[#1C2A22]" />
+              <div className="w-[1px] h-8 bg-[#1C2A22]" />
               <div className="flex gap-4">
-                <div className="px-3 py-1 bg-[#101A15] border border-[#1C2A22] font-mono text-[10px] text-[#E8E8E3]">
+                <div className="px-4 py-1.5 bg-[#101A15] border border-[#1C2A22] font-mono text-xs text-[#E8E8E3]">
                   MODULE 01
                 </div>
-                <div className="px-3 py-1 bg-[#101A15] border border-[#1C2A22] font-mono text-[10px] text-[#E8E8E3]">
+                <div className="px-4 py-1.5 bg-[#101A15] border border-[#1C2A22] font-mono text-xs text-[#E8E8E3]">
                   MODULE 02
                 </div>
               </div>
             </div>
 
-            <div className="relative z-10 flex items-center justify-between font-mono text-[10px] text-[#858982] border-t border-[#1C2A22]/50 pt-2">
+            <div className="relative z-10 flex items-center justify-between font-mono text-[11px] text-[#858982] border-t border-[#1C2A22] pt-3">
               <span>FEEDBACK: REAL-TIME</span>
-              <span className="text-[#D4B978]">INTERACTIVE UI</span>
+              <span className="text-[#D4B978] font-bold">INTERACTIVE UI</span>
             </div>
           </div>
         );
@@ -215,46 +215,46 @@ export default function SelectedWork() {
   };
 
   return (
-    <section id="work" className="py-24 lg:py-36 relative bg-[#080A09] border-t border-[#1C2A22]/50">
+    <section id="work" className="py-24 lg:py-36 relative bg-[#080A09] border-t border-[#1C2A22]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-8">
-          <span className="font-mono text-xs text-[#B89A5A] tracking-widest uppercase">
+          <span className="font-mono text-xs text-[#D4B978] tracking-widest uppercase font-semibold">
             03 / SELECTED WORK
           </span>
-          <div className="h-[1px] w-12 bg-[#1C2A22]" />
+          <div className="h-[1px] w-16 bg-[#1C2A22]" />
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#E8E8E3] tracking-tight max-w-2xl">
+          <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#E8E8E3] tracking-tight max-w-2xl">
             Selected products built with <span className="text-metallic-gold">precision & performance</span>.
           </h2>
-          <span className="font-mono text-xs text-[#858982]">
+          <span className="font-mono text-xs text-[#858982] uppercase tracking-wider">
             SHOWCASING 04 FEATURED PROJECTS
           </span>
         </div>
 
         {/* 4 Large Project Cards */}
         <div className="space-y-16 lg:space-y-24">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#101A15]/40 border border-[#1C2A22] p-6 lg:p-10 hover:border-[#B89A5A]/50 transition-all duration-300"
+              className="group grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center bg-[#101A15]/70 border border-[#1C2A22] p-6 lg:p-10 hover:border-[#B89A5A] transition-all duration-500 shadow-2xl"
             >
-              {/* Project Visual Area */}
+              {/* Visual Area */}
               <div className="lg:col-span-6 cursor-pointer" onClick={() => setSelectedProject(project)}>
                 {renderProjectVisual(project.visualType)}
               </div>
 
-              {/* Project Content Area */}
+              {/* Content Area */}
               <div className="lg:col-span-6 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-4">
-                    <span className="font-mono text-xs text-[#B89A5A] tracking-widest font-bold">
+                    <span className="font-mono text-xs text-[#D4B978] tracking-widest font-bold">
                       {project.number}
                     </span>
                     <span className="font-mono text-xs text-[#858982]">
@@ -262,7 +262,7 @@ export default function SelectedWork() {
                     </span>
                   </div>
 
-                  <h3 className="text-3xl lg:text-4xl font-bold text-[#E8E8E3] group-hover:text-[#D4B978] transition-colors tracking-tight mb-4">
+                  <h3 className="font-heading text-3xl lg:text-5xl font-bold text-[#E8E8E3] group-hover:text-[#D4B978] transition-colors tracking-tight mb-4">
                     {project.title}
                   </h3>
 
@@ -274,7 +274,7 @@ export default function SelectedWork() {
                     {project.tags.map((tag: string, i: number) => (
                       <span
                         key={i}
-                        className="font-mono text-xs px-3 py-1 bg-[#080A09] border border-[#1C2A22] text-[#E8E8E3]/80"
+                        className="font-mono text-xs px-3 py-1 bg-[#080A09] border border-[#1C2A22] text-[#D4B978]"
                       >
                         {tag}
                       </span>
@@ -285,10 +285,10 @@ export default function SelectedWork() {
                 <div>
                   <button
                     onClick={() => setSelectedProject(project)}
-                    className="inline-flex items-center gap-2 bg-[#101A15] border border-[#1C2A22] group-hover:border-[#B89A5A] px-6 py-3 font-mono text-xs tracking-widest text-[#E8E8E3] group-hover:text-[#D4B978] group-hover:bg-[#1C2A22] transition-all duration-300"
+                    className="inline-flex items-center gap-2 bg-[#101A15] border border-[#1C2A22] group-hover:border-[#B89A5A] px-6 py-3.5 font-mono text-xs tracking-widest text-[#E8E8E3] group-hover:text-[#D4B978] group-hover:bg-[#1C2A22] transition-all duration-300 shadow-lg"
                   >
                     <span>VIEW PROJECT</span>
-                    <ArrowUpRight className="w-4 h-4 text-[#B89A5A] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                    <ArrowUpRight className="w-4 h-4 text-[#D4B978] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                   </button>
                 </div>
               </div>

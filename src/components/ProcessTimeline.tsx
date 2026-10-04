@@ -56,18 +56,18 @@ export default function ProcessTimeline() {
   ];
 
   return (
-    <section id="process" className="py-24 lg:py-36 relative bg-[#080A09] border-t border-[#1C2A22]/50">
+    <section id="process" className="py-24 lg:py-36 relative bg-[#080A09] border-t border-[#1C2A22]">
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         {/* Section Header */}
         <div className="flex items-center gap-3 mb-8">
-          <span className="font-mono text-xs text-[#B89A5A] tracking-widest uppercase">
+          <span className="font-mono text-xs text-[#D4B978] tracking-widest uppercase font-semibold">
             04 / HOW WE BUILD
           </span>
-          <div className="h-[1px] w-12 bg-[#1C2A22]" />
+          <div className="h-[1px] w-16 bg-[#1C2A22]" />
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#E8E8E3] tracking-tight max-w-2xl">
+          <h2 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#E8E8E3] tracking-tight max-w-2xl">
             A disciplined 5-step methodology from <span className="text-metallic-gold">concept to code</span>.
           </h2>
           <p className="font-mono text-xs text-[#858982]">
@@ -87,9 +87,9 @@ export default function ProcessTimeline() {
                 <div
                   key={step.number}
                   onClick={() => setActiveStep(idx)}
-                  className={`p-6 border transition-all duration-300 cursor-pointer flex items-center justify-between ${
+                  className={`p-6 border transition-all duration-300 cursor-pointer flex items-center justify-between shadow-lg ${
                     isActive
-                      ? "bg-[#101A15] border-[#B89A5A] shadow-lg"
+                      ? "bg-[#101A15] border-[#B89A5A]"
                       : "bg-[#101A15]/40 border-[#1C2A22] hover:border-[#1C2A22]/80 hover:bg-[#101A15]/70"
                   }`}
                 >
@@ -103,13 +103,13 @@ export default function ProcessTimeline() {
                     </span>
                     <div>
                       <h3
-                        className={`text-lg font-bold tracking-tight ${
+                        className={`font-heading text-lg font-bold tracking-tight ${
                           isActive ? "text-[#E8E8E3]" : "text-[#858982]"
                         }`}
                       >
                         {step.title}
                       </h3>
-                      <p className="text-xs text-[#858982] mt-0.5 line-clamp-1">
+                      <p className="text-xs text-[#858982] mt-0.5 line-clamp-1 font-light">
                         {step.summary}
                       </p>
                     </div>
@@ -131,26 +131,23 @@ export default function ProcessTimeline() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.4 }}
-              className="bg-[#101A15] border border-[#1C2A22] p-8 lg:p-12 relative overflow-hidden"
+              className="bg-[#101A15] border border-[#1C2A22] p-8 lg:p-12 relative overflow-hidden shadow-2xl"
             >
-              {/* Sci-fi top corner marker */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-[#1C2A22]/20 pointer-events-none" />
               <div className="flex items-center justify-between border-b border-[#1C2A22] pb-6 mb-8">
                 <div className="flex items-center gap-3">
-                  <span className="font-mono text-xs text-[#B89A5A] tracking-widest font-bold">
+                  <span className="font-mono text-xs text-[#D4B978] tracking-widest font-bold">
                     STEP {steps[activeStep].number} OF 05
                   </span>
                   <span className="font-mono text-xs text-[#858982]">
                     // METHODOLOGY SPEC
                   </span>
                 </div>
-                <div className="px-3 py-1 bg-[#080A09] border border-[#1C2A22] font-mono text-[10px] text-[#D4B978]">
+                <div className="px-3 py-1 bg-[#080A09] border border-[#1C2A22] font-mono text-[10px] text-[#D4B978] font-bold">
                   STATUS: STANDARDIZED
                 </div>
               </div>
 
-              {/* Title & Summary */}
-              <h3 className="text-3xl font-bold text-[#E8E8E3] tracking-tight mb-3">
+              <h3 className="font-heading text-3xl sm:text-4xl font-extrabold text-[#E8E8E3] tracking-tight mb-3">
                 0{activeStep + 1} // {steps[activeStep].title}
               </h3>
               <p className="text-lg text-[#D4B978] font-mono mb-4">
@@ -160,7 +157,6 @@ export default function ProcessTimeline() {
                 {steps[activeStep].details}
               </p>
 
-              {/* Deliverables Checklist */}
               <div>
                 <h4 className="font-mono text-xs text-[#E8E8E3] uppercase tracking-widest mb-4">
                   // EXPECTED DELIVERABLES & MILESTONES
@@ -169,9 +165,9 @@ export default function ProcessTimeline() {
                   {steps[activeStep].deliverables.map((item, i) => (
                     <div
                       key={i}
-                      className="p-3 bg-[#080A09] border border-[#1C2A22] flex items-center gap-3"
+                      className="p-3.5 bg-[#080A09] border border-[#1C2A22] flex items-center gap-3"
                     >
-                      <CheckCircle2 className="w-4 h-4 text-[#B89A5A] shrink-0" />
+                      <CheckCircle2 className="w-4 h-4 text-[#D4B978] shrink-0" />
                       <span className="text-xs font-mono text-[#E8E8E3]">
                         {item}
                       </span>
@@ -180,13 +176,12 @@ export default function ProcessTimeline() {
                 </div>
               </div>
 
-              {/* Timeline Progress Bar */}
               <div className="mt-10 pt-6 border-t border-[#1C2A22] flex items-center gap-2">
                 {steps.map((_, i) => (
                   <div
                     key={i}
-                    className={`h-1.5 flex-1 rounded-full transition-colors duration-300 ${
-                      i <= activeStep ? "bg-[#B89A5A]" : "bg-[#1C2A22]"
+                    className={`h-2 flex-1 rounded-full transition-colors duration-300 ${
+                      i <= activeStep ? "bg-[#D4B978]" : "bg-[#1C2A22]"
                     }`}
                   />
                 ))}
